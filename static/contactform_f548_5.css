@@ -1,0 +1,90 @@
+.feedback {
+	text-align: center;
+	background: #fff;
+	padding: 0 0 15px;
+}
+.feedback h2 {
+    font-size: 25px;
+    padding: 15px 0;
+}
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+.ajax-contact-form input{
+	width: 40%;
+    margin: 10px auto 15px;
+    padding: 10px 15px;
+    border: solid 1px #2e1d1d;
+    border-radius: 20px;
+}
+textarea {
+	width: 89%;
+    padding: 10px 15px;
+    border: solid 1px #2e1d1d;
+    border-radius: 5px;
+    font-family: inherit;
+    resize: none;
+}
+
+input[type=submit] {
+	font-size: 17px;
+    padding: 0;
+    background: #8dbe4e;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.note {
+	display: none;
+	background: #00c606;
+    padding: 20px;
+    color: #fff;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+/* для элемента input c type="checkbox" */
+.custom-checkbox {
+  width: auto !important;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* для элемента label, связанного с .custom-checkbox */
+.custom-checkbox+label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+/* создание в label псевдоэлемента before со следующими стилями */
+.custom-checkbox+label::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 2px solid #fff;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  border: solid 1px;
+}
+
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.custom-checkbox:checked+label::before {
+  border-color: #fff;
+  background-color: #DB4037;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>АКУМУЛЯТОРНА МІНІ-ПИЛА</title>
+</head>
+<body>
+    <style>
+      .message {
+          height: 90vh;
+          max-width: 500px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 25px;
+          margin: 0 auto;
+          gap: 20px;
+          background-color: rgb(120 120 120 / .25);
+      }
+
+      .message a {
+          font-size: 18px;
+          text-decoration: none;
+      }
+
+      .message img {
+          width: 125px;
+      }
+    </style>
+
+    <div class="message">
+        <h2>Перевірте коректність введених даних!</h2>
+        <a href="/base">Повернутись на головну...</a>
+        <img src="{{ url_for('static', path='error.png') }}" alt="">
+    </div>
+</body>
+</html>
