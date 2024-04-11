@@ -24,7 +24,7 @@ async def send_mail(name: str, phone: str) -> bool:
         return False
 
     sender = "clothess951@gmail.com"
-    password = "jpxj wxrc zdjg ixwb"
+    password = "phit ujcy thjv ufjw"
 
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls()
