@@ -37,6 +37,8 @@ def counter_of_senders():
     with open("counter_senders.json", 'w') as file:
         json.dump(data, file, indent=4)
 
+    with open("file.txt", 'a') as file:
+        file.write("+\n")
 
 
 if __name__ == "__main__":
