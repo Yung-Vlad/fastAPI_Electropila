@@ -20,7 +20,7 @@ async def get_page(request: Request) -> Jinja2Templates.TemplateResponse:
 
 @app.post("/send")
 async def thanks_page(request: Request, name: str = Form(...), phone: str = Form(...)) -> Jinja2Templates.TemplateResponse:
-    await counter_of_senders()
+    counter_of_senders()
     valid = await send_mail(name, phone)
     if not valid:
         return templates.TemplateResponse("error.html", {"request": request})
@@ -29,7 +29,7 @@ async def thanks_page(request: Request, name: str = Form(...), phone: str = Form
     return templates.TemplateResponse("thank_you.html", {"request": request})
 
 
-async def counter_of_senders():
+def counter_of_senders():
     with open("counter_senders.json", 'r') as file:
         data = json.load(file)
         data["counter"] += 1
