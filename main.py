@@ -22,18 +22,9 @@ async def thanks_page(request: Request, name: str = Form(...), phone: str = Form
     valid = await send_mail(name, phone)
     if not valid:
         return templates.TemplateResponse("error.html", {"request": request})
-    await counter_of_senders()
+    
 
     return templates.TemplateResponse("thank_you.html", {"request": request})
-
-
-async def counter_of_senders():
-    with open("counter_senders.json", 'r') as file:
-        data = json.load(file)
-        data["counter"] += 1
-
-    with open("counter_senders.json", 'w') as file:
-        json.dump(data, file, indent=4)
 
 
 if __name__ == "__main__":
