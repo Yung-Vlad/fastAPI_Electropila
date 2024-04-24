@@ -19,10 +19,10 @@ async def get_page(request: Request) -> Jinja2Templates.TemplateResponse:
 
 @app.post("/send")
 async def thanks_page(request: Request, name: str = Form(...), phone: str = Form(...)) -> Jinja2Templates.TemplateResponse:
-    await counter_of_senders()
     valid = await send_mail(name, phone)
     if not valid:
         return templates.TemplateResponse("error.html", {"request": request})
+    await counter_of_senders()
 
     return templates.TemplateResponse("thank_you.html", {"request": request})
 
